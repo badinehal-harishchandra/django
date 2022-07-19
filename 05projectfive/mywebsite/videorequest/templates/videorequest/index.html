@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video resquest</title>
+    <link href="{% static 'videorequest/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <link href="{% static 'videorequest/theme.css' %}" role="main">
+
+</head>
+<body>
+    <div class="container theme-showcase" role="main">
+        <div class="jumbotron">
+            <h1>Video request page</h1>
+            <a type="button" class="'btn btn-link" href="{% url 'vrform' %}">Enter your video</a>
+        </div>
+        {% for v in videos %}
+        <div class ="page-header">
+            <h1>{{v.videotitle}}</h1>
+        </div>
+        <div class="well">
+            <p>{{v.videodesc}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
+
